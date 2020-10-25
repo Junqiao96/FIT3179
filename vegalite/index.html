@@ -19,7 +19,7 @@
 <div id="choropleth_map"></div>
 
 <h2>This is the second visualisation</h2>
-<div id="map"></div>
+<div id="choropleth_map"></div>
 
 <script type="text/javascript">
   
@@ -31,7 +31,7 @@
   
   var vis2 = "js/map_interactive.vg.json";
   
-  vegaEmbed('#map', vis2).then(function(result) {
+  vegaEmbed('#choropleth_map', vis2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
