@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "COVID-19 Active Cases (10 Oct 2020)",
+  "width": 800,
+  "height": 400,
+  "projection": {"type": "equirectangular"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/Junqiao96/FIT3179/main/vegalite/js/ne_110m_admin_0_countries.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Junqiao96/FIT3179/main/vegalite/data/COVID_19_10_Oct_2020.csv"
+        },
+        "key": "location",
+        "fields": ["total passengers", "location", "country", "airport"]
+      }
+    }
+  ],
+    "tooltip": [
+      {"field": "properties.NAME", "type": "nominal", "title": "Location"},
+      {"field": "airport", "type": "nominal", "title": "Airport Name"},
+      {"field": "total passengers", "type": "quantitative", "format": ","}
+    ]
+  }
+}
