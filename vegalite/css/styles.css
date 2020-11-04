@@ -14,8 +14,11 @@ body {
   font-family:Verdana;
   align-content:center;
 }
-.vega-embed{
-  align-content: center;
+.vega-embed {
+    padding: 10px;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
 }
 p{
   padding-left: 100px;
