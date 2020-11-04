@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Lowest Happiness Country",
+  "width": 370,
+  "height": {"step": 17},
+  "data": {
+    "url": "https://raw.githubusercontent.com/Junqiao96/FIT3179/main/vegalite/data/2018.csv"
+  },
+  "transform": [
+    {
+      "window": [{
+        "op": "rank",
+        "as": "Rank"
+      }],
+      "sort": [{ "field": "Score", "order": "ascending" }
+      ]
+    }, {
+      "filter": "datum.Rank <= 10"
+    }
+  
+    ],
+      "encoding": {
+        "y": {"field": "Country or region", "sort": "-x"},
+        "x": {
+          "aggregate": "sum",
+          "field": "Score",
+          "title": "Score"
+        }
+      },
+      
+  "layer": [
+    {
+      "mark": {"type": "bar", "tooltip": true},
+    "encoding": {
+      "color": {
+        "field": "Score",
+        "type": "quantitative",
+        "title": "Score"
+        
+      }
+    }
+    }, 
+    {
+      "mark": {"type": "text", "align": "left", "dx": 10}
+    }
+  ],
+  "config": {"axisY": {
+      "minExtent": 80
+    }}
+}
+
