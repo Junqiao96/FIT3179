@@ -1,30 +1,52 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "description": "A bar graph showing the scores of the top 5 students. This shows an example of the window transform, for how the top K (5) can be filtered, and also how a rank can be computed for each student.",
+  "title": "Global Happiness Index breakdown",
+  "width": 370,
+  "height": {"step": 17},
   "data": {
-          "url": "https://raw.githubusercontent.com/Junqiao96/FIT3179/main/vegalite/data/2018.csv"
-        },
+    "url": "https://raw.githubusercontent.com/Junqiao96/FIT3179/main/vegalite/data/2018.csv"
+  },
   "transform": [
     {
       "window": [{
         "op": "rank",
-        "as": "rank"
+        "as": "Rank"
       }],
-      "sort": [{ "field": "Score", "order": "descending" }]
+      "sort": [{ "field": "Score", "order": "descending" }
+      ]
     }, {
-      "filter": "datum.rank <= 5"
+      "filter": "datum.Rank <= 10"
+    }
+  
+    ],
+      "encoding": {
+        "y": {"field": "Country or region", "sort": "-x"},
+        "x": {
+          "aggregate": "sum",
+          "field": "Score",
+          "title": "Score"
+        }
+      },
+      
+  "layer": [
+    {
+      "mark": {"type": "bar", "tooltip": true},
+    "encoding": {
+      "color": {
+        "field": "Score",
+        "type": "quantitative",
+        "title": "Score"
+        
+      }
+    }
+    }, 
+    {
+      "mark": {"type": "text", "align": "left", "dx": 10}
     }
   ],
-  "mark": "bar",
-  "encoding": {
-    "x": {
-        "field": "Score",
-        "type": "quantitative"
-    },
-    "y": {
-        "field": "Country or region",
-        "type": "nominal",
-        "sort": {"field": "Score", "op": "average", "order":"descending"}
-    }
-  }
+  "config": {"axisY": {
+      "minExtent": 80
+    }}
 }
+
+
