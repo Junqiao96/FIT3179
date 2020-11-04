@@ -9,7 +9,8 @@
     "encoding": {
       "x": {"field": {"repeat": "repeat"}, "bin": true},
       "y": {"aggregate": "count","title":"Number of Countries"},
-      "color": {"field": "Origin"}
+      "color": {"aggregate": "count"}
     }
   }
 }
+
