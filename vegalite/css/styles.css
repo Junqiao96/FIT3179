@@ -21,6 +21,8 @@ h2{
     position: relative;
     display: block;
     box-sizing: border-box;
+  justify-content: center;
+  width:50%;
 }
 p{
   padding-left: 100px;
