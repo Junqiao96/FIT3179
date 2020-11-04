@@ -1,11 +1,15 @@
 h1 {
   color: #005580;
   text-align: center;
+  font-family:Verdana;
 }
 h2{
-  color: #0088cc;
+  color: #003d99;
   text-align: center;
+  font-family:Verdana;
 }
 body {
-  background-color: lightblue;
+  background-color: #f0ffff;
+  background-size: auto;
+  font-family:Verdana;
 }
