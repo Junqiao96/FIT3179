@@ -5,14 +5,19 @@ h1 {
 }
 h2{
   color: #003d99;
-  text-align: center;
+  align-content: center;
   font-family:Verdana;
 }
 body {
   background-color: #f0ffff;
   background-size: auto;
   font-family:Verdana;
+  align-content:center;
 }
-div{
-  text-align: center;
+visual{
+  align-content: center;
+}
+p{
+  padding-left: 100px;
+  padding-right:100px
 }
