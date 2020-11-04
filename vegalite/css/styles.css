@@ -19,5 +19,6 @@ visual{
 }
 p{
   padding-left: 100px;
-  padding-right:100px
+  padding-right:100px;
+  align-content: center;
 }
