@@ -6,12 +6,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <!-- Import vega-embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-  
 </head>
-<body>
 
 <h1>An Example of Multiple Visualisations</h1>
 
@@ -27,12 +22,12 @@
 <h2>This is the second visualisation</h2>
 <div id="specVis3"></div>
 <div id="specVis4"></div>
+  
 <script type="text/javascript">
   var specVis1="https://raw.githubusercontent.com/Junqiao96/FIT3179/main/vegalite/js/choropleth_map.vg.json";
   var specVis2="https://raw.githubusercontent.com/Junqiao96/FIT3179/main/vegalite/js/distribution.json";
   var specVis3="https://github.com/Junqiao96/FIT3179/blob/main/vegalite/js/topk_score.json";
   var specVis4="https://github.com/Junqiao96/FIT3179/blob/main/vegalite/js/bottomk_score.json";
-  var specVis5=""
 
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -47,10 +42,6 @@
   }).catch(console.error);
 
   vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-
-  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
